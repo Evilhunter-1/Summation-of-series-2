@@ -1,18 +1,18 @@
 #include <stdio.h>
-#include <math.h>
-	
+
 int main() {
-int x, n;
-long long sum;
+    int x, n, i;
+    long long sum = 0, term = 1;  // start with a = 1
 
-printf("Enter value of x: ");  
-scanf("%d", &x);  
+    printf("Enter value of x: ");
+    scanf("%d", &x);
 
-printf("Enter value of n: ");  
-scanf("%d", &n);  
+    printf("Enter value of n: ");
+    scanf("%d", &n);
 
-// Formula: (r^(n+1) - 1) / (r - 1), here a = 1  
-sum = (pow(x, n + 1) - 1) / (x - 1);  
-
-printf("Sum (Method 1) = %lld\n", sum);  
-return 0;}
+    for(i = 0; i <= n; i++) {
+        sum = sum + term;
+        term = term * x;  // next power of x
+    }
+   printf("Sum (Method 2) = %lld\n", sum);
+    return 0;}
